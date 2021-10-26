@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $dark-gray;
+  .nav__title {
+    color: $white;
+    background: $dark-gray;
+    padding: 0 25px;
+    font-weight: 900;
+    @media #{$m-smallphone} {
+      font-size: 28px;
+    }
+  }
+  .nav__search {
+    margin: 5px;
+    width: 450px;
+    border: 1px solid $white;
+    border-radius: 4px;
+    padding: 18px 25px;
+    background: url(../../images/search-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 95% 1rem;
+    background-color: $white;
+    @media #{$m-smallphone} {
+      width: 80%;
+      margin: 25px 0;
+    }
+  }
+  @media #{$m-smallphone} {
+    flex-direction: column;
+    padding: 25px;
+  }
+}

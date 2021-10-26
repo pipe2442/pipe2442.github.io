@@ -1,0 +1,86 @@
+.info__menu {
+  display: flex;
+  width: 100%;
+  margin: 0 15px;
+  .menu__option {
+    flex-basis: 33.3%;
+    font-size: 16px;
+    padding: 25px;
+    border-bottom: 1px solid $menu-option-color;
+    font-weight: 600;
+    color: $menu-option-blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+  }
+  .menu_option--center {
+    border-right: 1px solid $menu-option-color;
+    border-left: 1px solid $menu-option-color;
+  }
+  .--active__menu {
+    background: $white;
+    border-bottom: none;
+  }
+}
+.info__pokemon {
+  padding: 75px 20px 75px 75px;
+  margin: 0px 15px;
+  background: $white;
+  width: 100%;
+
+  .pokemon__stats {
+    display: none;
+    background: $white;
+    .stats__list {
+      display: flex;
+      align-items: center;
+      background: $white;
+      margin: 14px 0;
+      .list__stat {
+        font-weight: 200;
+        background: $white;
+        margin: 0 10px;
+      }
+      .list__bar {
+        background: $dark-gray;
+        height: 13px;
+      }
+    }
+  }
+
+  .pokemon__abilities {
+    display: none;
+    .abilities__details {
+      padding: 10px;
+      background: $white;
+      .abilities__title {
+        background: $white;
+      }
+      .abilities__text {
+        background: $white;
+      }
+    }
+  }
+
+  .pokemon__effectiveness {
+    display: none;
+    background: $white;
+    .effectiveness__container {
+      display: flex;
+      background: $white;
+      .effectiveness__list {
+        background: $white;
+        flex-basis: 34%;
+        .list__item {
+          background: $white;
+          font-weight: 700;
+          color: #3b3d4d;
+        }
+      }
+    }
+  }
+
+  .--active_stats {
+    display: block;
+  }
+}

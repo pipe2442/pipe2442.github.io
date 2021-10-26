@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/f58a22ad21.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./assets/styles/scss/main.css" />
+    <link rel="import" href="./stats.html" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <section class="header">
+      <img
+        class="header__title"
+        src="./assets/images/pokemon-wallpaper-preview.png"
+        alt="title"
+      />
+
+      <nav class="nav">
+        <a href="./index.html" class="nav__title">Pokedex</a>1
+        <input
+          class="nav__search"
+          type="text"
+          placeholder="Search by name..."
+        />
+      </nav>
+      
+      <div class="filters__selects js-filters">
+        <div class="selects__container">
+          <button class="select" data-show-filter="filter-by-type">
+            <h4 class="js-filter-title select__text js-type-element">Filter by type...</h4>
+            <i class="fas fa-angle-down select__icon"></i>
+          </button>
+
+          <div id="filter-by-type" class="options js-options">
+            <li><a class="options__content" data-filter="type" >Filter by type...</a></li>
+          </div>
+        </div>
+
+        <div class="selects__container select__container--number">
+          <button class="select" data-show-filter="filter-by-sort">
+            <h4 class="js-filter-title select__text js-type-sort">Sort...</h4>
+            <i class="fas fa-angle-down select__icon"></i>
+          </button>
+          <ul id="filter-by-sort" class="options js-options">
+            <li><a class="options__content" data-filter="sort">Sort...</a></li>
+            <li><a class="options__content" data-filter="sort" data-value="by number (asc)">By number (asc)</a></li>
+            <li><a class="options__content" data-filter="sort" data-value="by number (desc)">By number (desc)</a></li>
+            <li><a class="options__content" data-filter="sort" data-value="by name (asc)">By name (asc)</a></li>
+            <li><a class="options__content" data-filter="sort" data-value="by name (desc)">By name (desc)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pokedex__attributes js-attributes">
+      <div class="attributes__container">
+        <div class="js-stat-card"></div>
+
+        <div class="info__container">
+          <ul class="info__menu">
+            <li class="menu__option js-menu-option">Stats</li>
+            <li class="menu__option menu_option--center">Abilities</li>
+            <li class="menu__option">Type Effectiveness</li>
+          </ul>
+
+          <div class="info__pokemon">
+            <div
+              class="pokemon__stats js-info-pokemon js-stats-container"
+              data-action="Stats"
+            ></div>
+
+            <div
+              class="pokemon__abilities js-info-pokemon js-abilities-container"
+              data-action="Abilities"
+            >
+
+            </div>
+
+            <div
+              class="pokemon__effectiveness js-info-pokemon"
+              data-action="Type Effectiveness"
+            >
+              <div class="effectiveness__container">
+                <ul class="effectiveness__list">
+                  <li class="list__item">Normal: 100%</li>
+                  <li class="list__item">Fighting: 50%</li>
+                  <li class="list__item">Flying: 100%</li>
+                  <li class="list__item">Poison: 100%</li>
+                  <li class="list__item">Ground: 0%</li>
+                  <li class="list__item">Rock: 400%</li>
+                </ul>
+
+                <ul class="effectiveness__list">
+                  <li class="list__item">Bug: 25%</li>
+                  <li class="list__item">Ghost: 100%</li>
+                  <li class="list__item">Steel: 50%</li>
+                  <li class="list__item">Fire: 50%</li>
+                  <li class="list__item">Water: 200%</li>
+                  <li class="list__item">Grass: 25%</li>
+                </ul>
+
+                <ul class="effectiveness__list">
+                  <li class="list__item">Electric: 200%</li>
+                  <li class="list__item">Psychic: 100%</li>
+                  <li class="list__item">Ice: 100%</li>
+                  <li class="list__item">Dragon: 100%</li>
+                  <li class="list__item">Dark: 100%</li>
+                  <li class="list__item">Fairy: 50%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards__container js-cards-container"></section>
+    <div class="js-observer">
+      <div class="observer">
+        <div class="loadingio-spinner-rolling-qaqg5sy2ddc">
+          <div class="ldio-glpb0d38bz">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

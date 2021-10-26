@@ -1,0 +1,14 @@
+.cards__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 1rem;
+  justify-content: space-between; 
+  max-width: 1200px;
+  margin: 0 auto;
+  @media #{$m-smallscreen} {
+    justify-content: space-around;    
+  }
+}
+.active {
+  display: none;
+}

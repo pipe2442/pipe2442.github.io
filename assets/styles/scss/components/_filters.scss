@@ -1,0 +1,84 @@
+.filters__selects {
+  .selects__container {
+    margin: 30px 20px 30px 0;
+    width: 230px;
+    position: relative;
+    background: $white;
+    display: inline-block;
+    padding: 5px 0;
+    .select {
+      background: $white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: .2s ease all;
+      position: relative;
+      z-index: 200;
+      background-color: $white;
+      border: 1px solid transparent;
+      padding: 12px 25px;
+      width: 100%;
+      &__text {
+        background: $white;
+        font-size: 16px;
+        pointer-events: none;
+        text-transform: capitalize;
+      }
+      &__icon {
+        font-size: 30px;
+        background: $white;
+        color: $number-gray;
+        font-size: 20px;
+        pointer-events: none;
+      }
+    }
+  
+    .options {
+      background: $white;
+      max-height: 400px;
+      overflow: visible;
+      z-index: 100;
+      width: 100%;
+      display: none;
+      position: absolute;
+      &__content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        transition: .2s ease all;
+        color: $options-color;
+        background: $white;
+        padding: 17px 25px;
+        cursor: pointer;
+      }  
+      &__content:hover {
+        background: $conter-hover-background;
+        color: $dark-gray;
+      }
+    }
+    .active {
+      display: block;
+    }
+    @media #{$m-smallscreen} {
+      width: 180px;
+      margin: 25px 0;
+    }
+  }
+  
+  .select__container--number{
+    width: 280px;
+    @media #{$m-tablet} {
+      width: 230px;
+      margin: 25px 0;
+    }
+  }
+
+  @media #{$m-tablet} {
+    text-align: center;
+  }
+}
+
+.active {
+  display: none;
+}

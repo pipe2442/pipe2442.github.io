@@ -1,0 +1,25 @@
+.pokedex__attributes {
+  max-width: 1200px;
+  margin: 0 auto 200px auto;
+  display: none;
+  .attributes__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 30px;
+    .info__container {
+      flex-basis: 68%;
+      height: 300px;
+      width: 100%;
+
+    }
+    @media #{$m-smallscreen} {
+      justify-content: center;
+    }
+  }
+}
+
+.show{
+  display: block;
+}

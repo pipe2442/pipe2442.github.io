@@ -1,0 +1,16 @@
+$smallscreen: 1265px;
+$tablet: 768px;
+$smallphone: 380px;
+$m-tablet: "only screen and (max-width: #{$tablet + 1})";
+$m-smallscreen: "only screen and (max-width: #{$smallscreen + 1})";
+$m-smallphone: "only screen and (max-width: #{$smallphone + 1})";
+$dark-gray: #3b3d4d;
+$white: white;
+$background-white: whitesmoke;
+$card-shadow:  0px 1px 3px rgba(0, 0, 0, 0.2);
+$number-gray: rgba(153, 153, 153, 0.726);
+$hr-color: rgb(95, 98, 122);
+$options-color: #999999;
+$conter-hover-background: #F2F2F6;
+$menu-option-color: #e2e2e4;
+$menu-option-blue: #369bf8;
