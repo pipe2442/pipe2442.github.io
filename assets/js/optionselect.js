@@ -2,6 +2,7 @@ import * as fetching from './fetch.js'
 
 let type = fetching.FILTERS.default_type
 let sort = fetching.FILTERS.default_sort
+const TARGET = fetching.TARGET
 
 export default () => {
   const jsFilters = document.querySelector('.js-filters')
@@ -26,7 +27,7 @@ export default () => {
       if (defaultValue === fetching.FILTERS.default_sort) sort = value.toLowerCase()
       if (defaultValue !== fetching.FILTERS.default_sort) type = value.toLowerCase()
       fetching.HTMLResponse.innerHTML = ''
-      console.warn('SORTING', sort)
+      TARGET.classList.remove('observer--hide')
       fetching.initIntersection(0, type, sort)
     }
   })

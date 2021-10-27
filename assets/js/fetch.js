@@ -12,6 +12,7 @@ const FILTERS = {
 }
 let POKEMONS = []
 const OPTIONS_FILTERS = document.querySelectorAll('.options')
+const TARGET = document.querySelector('.js-observer')
 
 const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FILTERS.default_sort) => {
   const getPokemonAxios = async (type) => {
@@ -54,6 +55,10 @@ async function callPokedex (pokemonsUrl, sort, offset, type) {
       POKEMONS.push(pokemon)
     }
     POKEMONS = renders.sortingPokemons(sort, POKEMONS, FILTERS)
+    let pokeLength = POKEMONS.length
+    if(offset >= pokeLength) {
+      TARGET.classList.add('observer--hide')
+    }
     if (type !== FILTERS.default_type) {
       for (let start = 0 + offset; start <= 15 + offset; start++) {
         const pokemon = renders.renderNewPokemon(POKEMONS[start])
@@ -82,7 +87,7 @@ async function fetchOptionsSelect () {
 }
 
 function initIntersection (offset = 0, type, sort) {
-  const target = document.querySelector('.js-observer')
+  
   const handleIntersection = (entries) => {
     entries.map((entry) => {
       if (entry.isIntersecting) {
@@ -92,10 +97,10 @@ function initIntersection (offset = 0, type, sort) {
     })
   }
   const observer = new IntersectionObserver(handleIntersection)
-  observer.observe(target)
+  observer.observe(TARGET)
   OPTIONS_FILTERS.forEach(filter => {
     filter.addEventListener('click', () => {
-      observer.unobserve(target)
+      observer.unobserve(TARGET)
       POKEMONS = []
     })
   })
@@ -107,5 +112,6 @@ export {
   HTMLResponse,
   factoryPokedex,
   cleanScreen,
-  FILTERS
+  FILTERS,
+  TARGET
 }
