@@ -56,8 +56,7 @@ async function callPokedex (pokemonsUrl, sort, offset, type) {
     }
     POKEMONS = renders.sortingPokemons(sort, POKEMONS, FILTERS)
     let pokeLength = POKEMONS.length
-    let diff = pokeLength - offset
-    if(diff <= offset) {
+    if(offset > pokeLength) {
       TARGET.classList.add('observer--hide')
     }
     if (type !== FILTERS.default_type) {
