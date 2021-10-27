@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   margin: 0 15px;
+
   .menu__option {
     flex-basis: 33.3%;
     font-size: 16px;
@@ -18,7 +19,7 @@
       border-left: 1px solid $menu-option-color;
     }
 
-    &--active__menu {
+    &--active {
       background: $white;
       border-bottom: none;
     }
@@ -83,7 +84,7 @@
     }
   }
 
-  &--active_stats {
+  &--active {
     display: block;
   }
 }

@@ -26,19 +26,19 @@
         />
       </nav>
       
-      <div class="filters__selects js-filters">
-        <div class="selects__container">
+      <div class="filters js-filters">
+        <div class="filter__container">
           <button class="select" data-show-filter="filter-by-type">
             <h4 class="select__text js-filter-title js-type-element">Filter by type...</h4>
             <i class="fas fa-angle-down select__icon"></i>
           </button>
 
-          <div id="filter-by-type" class="options js-options">
+          <ul id="filter-by-type" class="options js-options">
             <li><a class="options__content" data-filter="type" >Filter by type...</a></li>
-          </div>
+          </ul>
         </div>
 
-        <div class="selects__container selects__container--sort">
+        <div class="filter__container filter__container--sort">
           <button class="select" data-show-filter="filter-by-sort">
             <h4 class="select__text js-filter-title js-type-sort">Sort...</h4>
             <i class="fas fa-angle-down select__icon"></i>
@@ -58,15 +58,15 @@
       <div class="attributes__container">
         <div class="js-stat-card"></div>
         <div class="info__container">
-          <ul class="info__menu">
-            <li class="menu__option js-menu-option" data-type="stats">Stats</li>
-            <li class="menu__option menu_option--center" data-type="abilities">Abilities</li>
-            <li class="menu__option" data-type="effectiveness">Type Effectiveness</li>
+          <ul class="info__menu js-info-menu">
+            <li class="menu__option js-menu-option menu__option--active" data-type="stats">Stats</li>
+            <li class="menu__option js-menu-option menu_option--center" data-type="abilities">Abilities</li>
+            <li class="menu__option js-menu-option" data-type="effectiveness">Type Effectiveness</li>
           </ul>
           <div class="info__pokemon">
-            <div class="info__pokemon__stats js-info-pokemon js-stats-container" data-action="Stats"></div>
-            <div class="info__pokemon__abilities js-info-pokemon js-abilities-container" data-action="Abilities"></div>
-            <div class="info__pokemon__effectiveness js-info-pokemon js-pokemon-effectiveness" data-action="Type Effectiveness">
+            <div class="info__pokemon__stats js-info-pokemon js-stats-container info__pokemon--active" data-action="stats"></div>
+            <div class="info__pokemon__abilities js-info-pokemon js-abilities-container" data-action="abilities"></div>
+            <div class="info__pokemon__effectiveness js-info-pokemon js-pokemon-effectiveness" data-action="effectiveness">
               <div class="effectiveness__container">
                 <ul class="effectiveness__list">
                   <li class="list__item">Normal: 100%</li>

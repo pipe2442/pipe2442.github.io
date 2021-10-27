@@ -2,34 +2,25 @@ import * as renders from './renders.js'
 
 export default () => {
   
-  const options = document.querySelectorAll('.menu__option')
-  const stats = document.querySelector('.js-stats-container')
-  const abilities = document.querySelector('.js-abilities-container')
-  const effectiveness = document.querySelector('.js-pokemon-effectiveness')
-  const infoPokemon = document.querySelectorAll('.js-info-pokemon')
-  const statsContainer = document.querySelector('.js-stat-card')
-  const cardsContainer = document.querySelector('.js-cards-container')
-  const filters = document.querySelector('.js-filters')
-  const attributescontainer = document.querySelector('.js-attributes')
-  const observer = document.querySelector('.js-observer')
-  const actualMenu = options[0]
-
-  actualMenu.classList.toggle('menu__option--active__menu')
-  stats.classList.toggle('info__pokemon--active_stats')
-
-  options.forEach((option) => {
-    option.addEventListener('click', () => {
-      options.forEach((o) => o.classList.remove('menu__option--active__menu'))
-      infoPokemon.forEach((o) => o.classList.remove('info__pokemon--active_stats'))
-      option.classList.toggle('menu__option--active__menu')
-      if (option.dataset.type === 'stats') {
-        stats.classList.add('info__pokemon--active_stats')
-      } else if (option.dataset.type === 'abilities') {
-        abilities.classList.add('info__pokemon--active_stats')
-      } else if (option.dataset.type === 'effectiveness') {
-        effectiveness.classList.add('info__pokemon--active_stats')
-      }
-    })
+  const menuOption = document.querySelector('.js-info-menu')
+  menuOption.addEventListener('click', function ({ target }) {
+    if (target.dataset.type) {
+      const tab = document.querySelector(`[data-type="${target.dataset.type}"]`)
+      const tabs = document.querySelectorAll('.js-info-pokemon')
+      const menuOptions = document.querySelectorAll('.js-menu-option')
+      menuOptions.forEach(elm => {
+        elm.classList.remove('menu__option--active')
+      })
+      
+      tabs.forEach((elm) => {
+        if(elm.dataset.action === tab.dataset.type) {
+          tab.classList.add('menu__option--active')
+          elm.classList.add('info__pokemon--active')
+          return
+        }
+        elm.classList.remove('info__pokemon--active')
+      })
+    }
   })
 
   const newStat = (pokemonStats, container) => {
@@ -75,6 +66,11 @@ export default () => {
   }
 
   const getPokemon = async (id) => {
+
+    const stats = document.querySelector('.js-stats-container')
+    const statsContainer = document.querySelector('.js-stat-card')
+    const abilities = document.querySelector('.js-abilities-container')
+    
     try {
       const res = await axios(`https://pokeapi.co/api/v2/pokemon/${id}`)
       const pokemon = res.data
@@ -87,8 +83,13 @@ export default () => {
     }
   }
 
+  const cardsContainer = document.querySelector('.js-cards-container')
+  const filters = document.querySelector('.js-filters')
+  const attributescontainer = document.querySelector('.js-attributes')
+  const observer = document.querySelector('.js-observer')
+
   cardsContainer.addEventListener('click', (e) => {
-    filters.classList.add('filters__selects--hide')
+    filters.classList.add('filters--hide')
     cardsContainer.classList.add('cards__container--hide')
     observer.classList.add('observer--hide')
     attributescontainer.classList.add('pokedex__attributes--active')

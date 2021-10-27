@@ -14,14 +14,17 @@ li {
   text-decoration-style: none;
   list-style-type: none; }
 
-.observer .loading {
+.observer--hide {
+  display: none; }
+
+.loading {
   width: 150px;
   height: 150px;
   display: block;
   margin: 0 auto;
   overflow: hidden;
   background: #ffffff; }
-  .observer .loading__spinner {
+  .loading__spinner {
     width: 100%;
     height: 100%;
     position: relative;
@@ -29,7 +32,7 @@ li {
     backface-visibility: hidden;
     transform-origin: 0 0;
     /* see note above */ }
-    .observer .loading__spinner .spinner__element {
+    .loading__spinner .spinner__element {
       position: absolute;
       width: 70px;
       height: 70px;
@@ -45,9 +48,6 @@ li {
     transform: translate(-50%, -50%) rotate(0deg); }
   100% {
     transform: translate(-50%, -50%) rotate(360deg); } }
-.observer--hide {
-  display: none; }
-
 .header {
   max-width: 1200px;
   margin: 0 auto; }
@@ -92,74 +92,74 @@ li {
       flex-direction: column;
       padding: 25px; } }
 
-.filters__selects .selects__container {
+.filters .filter__container {
   margin: 30px 20px 30px 0;
   width: 230px;
   position: relative;
   background: white;
   display: inline-block;
   padding: 5px 0; }
-  .filters__selects .selects__container .select {
-    background: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.2s ease all;
-    position: relative;
-    z-index: 200;
-    background-color: white;
-    border: 1px solid transparent;
-    padding: 12px 25px;
-    width: 100%; }
-    .filters__selects .selects__container .select__text {
-      background: white;
-      font-size: 16px;
-      pointer-events: none;
-      text-transform: capitalize; }
-    .filters__selects .selects__container .select__icon {
-      font-size: 30px;
-      background: white;
-      color: rgba(153, 153, 153, 0.726);
-      font-size: 20px;
-      pointer-events: none; }
-  .filters__selects .selects__container .options {
-    background: white;
-    max-height: 400px;
-    overflow: visible;
-    z-index: 100;
-    width: 100%;
-    display: none;
-    position: absolute; }
-    .filters__selects .selects__container .options__content {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      transition: 0.2s ease all;
-      color: #999999;
-      background: white;
-      padding: 17px 25px;
-      cursor: pointer; }
-    .filters__selects .selects__container .options__content:hover {
-      background: #F2F2F6;
-      color: #3b3d4d; }
-    .filters__selects .selects__container .options--active {
-      display: block; }
   @media only screen and (max-width: 1266px) {
-    .filters__selects .selects__container {
+    .filters .filter__container {
       width: 180px;
       margin: 25px 0; } }
-  .filters__selects .selects__container--sort {
+  .filters .filter__container--sort {
     width: 280px; }
     @media only screen and (max-width: 769px) {
-      .filters__selects .selects__container--sort {
+      .filters .filter__container--sort {
         width: 230px;
         margin: 25px 0;
         z-index: 0; } }
-.filters__selects--hide {
+.filters .select {
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease all;
+  position: relative;
+  z-index: 200;
+  background-color: white;
+  border: 1px solid transparent;
+  padding: 12px 25px;
+  width: 100%; }
+  .filters .select__text {
+    background: white;
+    font-size: 16px;
+    pointer-events: none;
+    text-transform: capitalize; }
+  .filters .select__icon {
+    font-size: 30px;
+    background: white;
+    color: rgba(153, 153, 153, 0.726);
+    font-size: 20px;
+    pointer-events: none; }
+.filters .options {
+  background: white;
+  max-height: 400px;
+  overflow: visible;
+  z-index: 100;
+  width: 100%;
+  display: none;
+  position: absolute; }
+  .filters .options__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.2s ease all;
+    color: #999999;
+    background: white;
+    padding: 17px 25px;
+    cursor: pointer; }
+  .filters .options__content:hover {
+    background: #F2F2F6;
+    color: #3b3d4d; }
+  .filters .options--active {
+    display: block; }
+.filters--hide {
   display: none; }
 @media only screen and (max-width: 769px) {
-  .filters__selects {
+  .filters {
     text-align: center; } }
 
 .card {
@@ -318,7 +318,7 @@ li {
     .info__menu .menu__option--center {
       border-right: 1px solid #e2e2e4;
       border-left: 1px solid #e2e2e4; }
-    .info__menu .menu__option--active__menu {
+    .info__menu .menu__option--active {
       background: white;
       border-bottom: none; }
 
@@ -364,7 +364,7 @@ li {
           background: white;
           font-weight: 700;
           color: #3b3d4d; }
-  .info__pokemon--active_stats {
+  .info__pokemon--active {
     display: block; }
 
 .pokedex__attributes {

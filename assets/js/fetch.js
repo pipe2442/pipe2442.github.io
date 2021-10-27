@@ -11,7 +11,7 @@ const FILTERS = {
   default_type: 'filter by type...'
 }
 let POKEMONS = []
-const OPTIONS_FILTERS = document.querySelectorAll('.options')
+const OPTIONS_FILTERS = document.querySelectorAll('.js-options')
 const TARGET = document.querySelector('.js-observer')
 
 const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FILTERS.default_sort) => {
@@ -21,7 +21,6 @@ const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FI
       POKEMONS = []
       url = `https://pokeapi.co/api/v2/type/${type}`
     }
-
     try {
       let pokemons = []
       const res = await axios(url)
@@ -39,7 +38,6 @@ const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FI
       console.log(error)
     }
   }
-
   const pokemonsUrl = await getPokemonAxios(type)
   callPokedex(pokemonsUrl, sort, offset, type)
 }
