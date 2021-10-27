@@ -14,43 +14,39 @@ li {
   text-decoration-style: none;
   list-style-type: none; }
 
-@keyframes ldio-glpb0d38bz {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg); }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg); } }
-.ldio-glpb0d38bz div {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 20px solid #3b3d4d;
-  border-top-color: transparent;
-  border-radius: 50%; }
-
-.ldio-glpb0d38bz div {
-  animation: ldio-glpb0d38bz 1s linear infinite;
-  top: 100px;
-  left: 100px; }
-
-.loadingio-spinner-rolling-qaqg5sy2ddc {
-  width: 200px;
-  height: 200px;
+.observer .loading {
+  width: 150px;
+  height: 150px;
   display: block;
   margin: 0 auto;
   overflow: hidden;
   background: #ffffff; }
-
-.ldio-glpb0d38bz {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0;
-  /* see note above */ }
-
-.ldio-glpb0d38bz div {
-  box-sizing: content-box; }
+  .observer .loading__spinner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */ }
+    .observer .loading__spinner .spinner__element {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border: 12px solid #3b3d4d;
+      border-top-color: transparent;
+      border-radius: 50%;
+      box-sizing: content-box;
+      animation: loading__spinner 1s linear infinite;
+      top: 80px;
+      left: 80px; }
+@keyframes loading__spinner {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg); } }
+.observer--hide {
+  display: none; }
 
 .header {
   max-width: 1200px;
@@ -68,15 +64,15 @@ li {
   justify-content: space-between;
   align-items: center;
   background: #3b3d4d; }
-  .nav .nav__title {
+  .nav__title {
     color: white;
     background: #3b3d4d;
     padding: 0 25px;
     font-weight: 900; }
     @media only screen and (max-width: 381px) {
-      .nav .nav__title {
+      .nav__title {
         font-size: 28px; } }
-  .nav .nav__search {
+  .nav__search {
     margin: 5px;
     width: 450px;
     border: 1px solid white;
@@ -88,7 +84,7 @@ li {
     background-position: 95% 1rem;
     background-color: white; }
     @media only screen and (max-width: 381px) {
-      .nav .nav__search {
+      .nav__search {
         width: 80%;
         margin: 25px 0; } }
   @media only screen and (max-width: 381px) {
@@ -109,7 +105,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: .2s ease all;
+    transition: 0.2s ease all;
     position: relative;
     z-index: 200;
     background-color: white;
@@ -139,7 +135,7 @@ li {
       width: 100%;
       display: flex;
       align-items: center;
-      transition: .2s ease all;
+      transition: 0.2s ease all;
       color: #999999;
       background: white;
       padding: 17px 25px;
@@ -147,24 +143,23 @@ li {
     .filters__selects .selects__container .options__content:hover {
       background: #F2F2F6;
       color: #3b3d4d; }
-  .filters__selects .selects__container .active {
-    display: block; }
+    .filters__selects .selects__container .options--active {
+      display: block; }
   @media only screen and (max-width: 1266px) {
     .filters__selects .selects__container {
       width: 180px;
       margin: 25px 0; } }
-.filters__selects .select__container--number {
-  width: 280px; }
-  @media only screen and (max-width: 769px) {
-    .filters__selects .select__container--number {
-      width: 230px;
-      margin: 25px 0; } }
+  .filters__selects .selects__container--sort {
+    width: 280px; }
+    @media only screen and (max-width: 769px) {
+      .filters__selects .selects__container--sort {
+        width: 230px;
+        margin: 25px 0; } }
+.filters__selects--hide {
+  display: none; }
 @media only screen and (max-width: 769px) {
   .filters__selects {
     text-align: center; } }
-
-.active {
-  display: none; }
 
 .card {
   border-radius: 4px;
@@ -172,7 +167,8 @@ li {
   margin: 0 0 30px 0;
   min-width: 250px;
   cursor: pointer;
-  height: 80%; }
+  height: 80%;
+  pointer-events: visible; }
   .card__info {
     display: flex;
     align-items: center;
@@ -211,39 +207,34 @@ li {
       background: #5f627a;
       border: none; }
 
-.card--stats {
-  flex-basis: 25%;
-  height: 80%;
-  margin: 0 0 35px 0; }
-
 .cards__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: 1rem;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  pointer-events: none; }
   @media only screen and (max-width: 1266px) {
     .cards__container {
       justify-content: space-around; } }
-
-.active {
-  display: none; }
+  .cards__container--hide {
+    display: none; }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #3b3d4d; }
-  .nav .nav__title {
+  .nav__title {
     color: white;
     background: #3b3d4d;
     padding: 0 25px;
     font-weight: 900; }
     @media only screen and (max-width: 381px) {
-      .nav .nav__title {
+      .nav__title {
         font-size: 28px; } }
-  .nav .nav__search {
+  .nav__search {
     margin: 5px;
     width: 450px;
     border: 1px solid white;
@@ -255,7 +246,7 @@ li {
     background-position: 95% 1rem;
     background-color: white; }
     @media only screen and (max-width: 381px) {
-      .nav .nav__search {
+      .nav__search {
         width: 80%;
         margin: 25px 0; } }
   @media only screen and (max-width: 381px) {
@@ -269,7 +260,8 @@ li {
   margin: 0 0 30px 0;
   min-width: 250px;
   cursor: pointer;
-  height: 80%; }
+  height: 80%;
+  pointer-events: visible; }
   .card__info {
     display: flex;
     align-items: center;
@@ -307,11 +299,6 @@ li {
       margin: 0;
       background: #5f627a;
       border: none; }
-
-.card--stats {
-  flex-basis: 25%;
-  height: 80%;
-  margin: 0 0 35px 0; }
 
 .info__menu {
   display: flex;
@@ -327,56 +314,56 @@ li {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer; }
-  .info__menu .menu_option--center {
-    border-right: 1px solid #e2e2e4;
-    border-left: 1px solid #e2e2e4; }
-  .info__menu .--active__menu {
-    background: white;
-    border-bottom: none; }
+    .info__menu .menu__option--center {
+      border-right: 1px solid #e2e2e4;
+      border-left: 1px solid #e2e2e4; }
+    .info__menu .menu__option--active__menu {
+      background: white;
+      border-bottom: none; }
 
 .info__pokemon {
   padding: 75px 20px 75px 75px;
   margin: 0px 15px;
   background: white;
   width: 100%; }
-  .info__pokemon .pokemon__stats {
+  .info__pokemon__stats {
     display: none;
     background: white; }
-    .info__pokemon .pokemon__stats .stats__list {
+    .info__pokemon__stats .stats__list {
       display: flex;
       align-items: center;
       background: white;
       margin: 14px 0; }
-      .info__pokemon .pokemon__stats .stats__list .list__stat {
+      .info__pokemon__stats .stats__list .list__stat {
         font-weight: 200;
         background: white;
         margin: 0 10px; }
-      .info__pokemon .pokemon__stats .stats__list .list__bar {
+      .info__pokemon__stats .stats__list .list__bar {
         background: #3b3d4d;
         height: 13px; }
-  .info__pokemon .pokemon__abilities {
+  .info__pokemon__abilities {
     display: none; }
-    .info__pokemon .pokemon__abilities .abilities__details {
+    .info__pokemon__abilities .abilities__details {
       padding: 10px;
       background: white; }
-      .info__pokemon .pokemon__abilities .abilities__details .abilities__title {
+      .info__pokemon__abilities .abilities__details .abilities__title {
         background: white; }
-      .info__pokemon .pokemon__abilities .abilities__details .abilities__text {
+      .info__pokemon__abilities .abilities__details .abilities__text {
         background: white; }
-  .info__pokemon .pokemon__effectiveness {
+  .info__pokemon__effectiveness {
     display: none;
     background: white; }
-    .info__pokemon .pokemon__effectiveness .effectiveness__container {
+    .info__pokemon__effectiveness .effectiveness__container {
       display: flex;
       background: white; }
-      .info__pokemon .pokemon__effectiveness .effectiveness__container .effectiveness__list {
+      .info__pokemon__effectiveness .effectiveness__container .effectiveness__list {
         background: white;
         flex-basis: 34%; }
-        .info__pokemon .pokemon__effectiveness .effectiveness__container .effectiveness__list .list__item {
+        .info__pokemon__effectiveness .effectiveness__container .effectiveness__list .list__item {
           background: white;
           font-weight: 700;
           color: #3b3d4d; }
-  .info__pokemon .--active_stats {
+  .info__pokemon--active_stats {
     display: block; }
 
 .pokedex__attributes {
@@ -396,8 +383,7 @@ li {
     @media only screen and (max-width: 1266px) {
       .pokedex__attributes .attributes__container {
         justify-content: center; } }
-
-.show {
-  display: block; }
+  .pokedex__attributes--active {
+    display: block; }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   background: $dark-gray;
-  .nav__title {
+
+  &__title {
     color: $white;
     background: $dark-gray;
     padding: 0 25px;
@@ -12,7 +13,8 @@
       font-size: 28px;
     }
   }
-  .nav__search {
+
+  &__search {
     margin: 5px;
     width: 450px;
     border: 1px solid $white;
@@ -28,6 +30,7 @@
       margin: 25px 0;
     }
   }
+
   @media #{$m-smallphone} {
     flex-direction: column;
     padding: 25px;

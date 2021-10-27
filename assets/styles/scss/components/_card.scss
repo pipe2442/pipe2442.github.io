@@ -5,6 +5,8 @@
   min-width: 250px;
   cursor: pointer;
   height: 80%;
+  pointer-events: visible;
+
   &__info {
     display: flex;
     align-items: center;
@@ -14,7 +16,6 @@
     min-height: 80%;
     .info__image {
       background: $white;
-
     }
     .info__text {
       background: $white;
@@ -23,15 +24,14 @@
         font-weight: bold;
         margin: 0 0 5px 0;
         background: $white;
-  
       }
       .text__number {
         color: $number-gray;
         background: $white;
-
       }
     }
   }
+
   &__type {
     display: flex;
     justify-content: space-evenly;
@@ -44,7 +44,6 @@
       color: white;
       font-weight: 500;
       background-color: $dark-gray;
-
     }
     .type__hr {
       width: 1px;
@@ -52,12 +51,6 @@
       margin: 0;
       background: $hr-color;
       border: none;
-
     }
   }
-}
-.card--stats {
-  flex-basis: 25%;
-  height: 80%;
-  margin: 0 0 35px 0;
 }

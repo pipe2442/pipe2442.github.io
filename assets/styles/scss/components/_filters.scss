@@ -6,13 +6,14 @@
     background: $white;
     display: inline-block;
     padding: 5px 0;
+
     .select {
       background: $white;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: .2s ease all;
+      transition: 0.2s ease all;
       position: relative;
       z-index: 200;
       background-color: $white;
@@ -33,7 +34,7 @@
         pointer-events: none;
       }
     }
-  
+
     .options {
       background: $white;
       max-height: 400px;
@@ -46,39 +47,40 @@
         width: 100%;
         display: flex;
         align-items: center;
-        transition: .2s ease all;
+        transition: 0.2s ease all;
         color: $options-color;
         background: $white;
         padding: 17px 25px;
         cursor: pointer;
-      }  
+      }
       &__content:hover {
         background: $conter-hover-background;
         color: $dark-gray;
       }
+      &--active {
+        display: block;
+      }
     }
-    .active {
-      display: block;
-    }
+
     @media #{$m-smallscreen} {
       width: 180px;
       margin: 25px 0;
     }
-  }
-  
-  .select__container--number{
-    width: 280px;
-    @media #{$m-tablet} {
-      width: 230px;
-      margin: 25px 0;
+
+    &--sort {
+      width: 280px;
+      @media #{$m-tablet} {
+        width: 230px;
+        margin: 25px 0;
+      }
     }
+  }
+
+  &--hide {
+    display: none;
   }
 
   @media #{$m-tablet} {
     text-align: center;
   }
-}
-
-.active {
-  display: none;
 }

@@ -2,6 +2,7 @@
   max-width: 1200px;
   margin: 0 auto 200px auto;
   display: none;
+
   .attributes__container {
     display: flex;
     justify-content: space-between;
@@ -12,14 +13,13 @@
       flex-basis: 68%;
       height: 300px;
       width: 100%;
-
     }
     @media #{$m-smallscreen} {
       justify-content: center;
     }
   }
-}
 
-.show{
-  display: block;
+  &--active {
+    display: block;
+  }
 }

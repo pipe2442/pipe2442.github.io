@@ -12,23 +12,26 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
-  }
-  .menu_option--center {
-    border-right: 1px solid $menu-option-color;
-    border-left: 1px solid $menu-option-color;
-  }
-  .--active__menu {
-    background: $white;
-    border-bottom: none;
+
+    &--center {
+      border-right: 1px solid $menu-option-color;
+      border-left: 1px solid $menu-option-color;
+    }
+
+    &--active__menu {
+      background: $white;
+      border-bottom: none;
+    }
   }
 }
+
 .info__pokemon {
   padding: 75px 20px 75px 75px;
   margin: 0px 15px;
   background: $white;
   width: 100%;
 
-  .pokemon__stats {
+  &__stats {
     display: none;
     background: $white;
     .stats__list {
@@ -48,7 +51,7 @@
     }
   }
 
-  .pokemon__abilities {
+  &__abilities {
     display: none;
     .abilities__details {
       padding: 10px;
@@ -62,7 +65,7 @@
     }
   }
 
-  .pokemon__effectiveness {
+  &__effectiveness {
     display: none;
     background: $white;
     .effectiveness__container {
@@ -80,7 +83,7 @@
     }
   }
 
-  .--active_stats {
+  &--active_stats {
     display: block;
   }
 }

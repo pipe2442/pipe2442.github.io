@@ -15,7 +15,6 @@ const OPTIONS_FILTERS = document.querySelectorAll('.options')
 
 const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FILTERS.default_sort) => {
   const getPokemonAxios = async (type) => {
-    console.log('offset', offset)
     let url = `https://pokeapi.co/api/v2/pokemon?limit=16&offset=${offset}`
     if (type !== FILTERS.default_type) {
       POKEMONS = []
@@ -26,14 +25,12 @@ const factoryPokedex = async (offset = 0, type = FILTERS.default_type, sort = FI
       let pokemons = []
       const res = await axios(url)
       const pokemonData = { ...res.data }
-      console.log('DATA', pokemonData)
       if (type !== FILTERS.default_type) {
         pokemonData.pokemon.forEach(p => {
           pokemons.push(p.pokemon)
         })
       } else {
         pokemons = pokemonData.results
-        console.log('poke', pokemons)
       }
 
       return pokemons
@@ -63,7 +60,6 @@ async function callPokedex (pokemonsUrl, sort, offset, type) {
         HTMLResponse.innerHTML += pokemon
       }
     } else {
-      console.warn('RENDERING',POKEMONS)
       renders.renderPokemons(POKEMONS, HTMLResponse)
     }
   } catch (error) {
@@ -99,7 +95,6 @@ function initIntersection (offset = 0, type, sort) {
   observer.observe(target)
   OPTIONS_FILTERS.forEach(filter => {
     filter.addEventListener('click', () => {
-      console.log('filter was pressed')
       observer.unobserve(target)
       POKEMONS = []
     })
