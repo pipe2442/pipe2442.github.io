@@ -1,0 +1,25 @@
+@import "../../styles/styles.scss";
+
+.banner {
+  background: rgb(3, 176, 131);
+  background: linear-gradient(
+    90deg,
+    rgba(3, 176, 131, 1) 0%,
+    rgba(11, 216, 162, 1) 35%,
+    rgba(7, 227, 169, 1) 100%
+  );
+  padding: 50px;
+  text-align: center;
+  &__title {
+    font-size: 55px;
+    font-weight: 200;
+  }
+  .banner__download {
+      margin: 25px auto;
+      .download__image {
+          width: 135px;
+          margin: 0 10px;
+          cursor: pointer;
+      }
+  }
+}

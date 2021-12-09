@@ -1,0 +1,11 @@
+$tablet: 768px;
+$smallphone: 433px;
+$m-tablet: "only screen and (max-width: #{$tablet + 1})";
+$m-smallphone: "only screen and (max-width: #{$smallphone + 1})";
+$white: white;
+$background-white: whitesmoke;
+$light-gray: #999999;
+$green: #0bd8a2;
+$green-hover: #0dffbe;
+$black: black;
+$soft-gray: rgb(7, 8, 8);

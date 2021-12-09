@@ -1,0 +1,11 @@
+@import '../../styles/styles.scss';
+
+.menu-container {
+  width: 100%;
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-gap: 1rem;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../styles/styles.scss";
+
+.card-box {
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 20rem;
+  height: 8rem;
+  @media #{$m-tablet} {
+    width: 17rem;
+  }
+  .card__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+    width: 25rem;
+    .card__image {
+      width: 65px;
+      height: 65px;
+      border-radius: 5px;
+    }
+    .card__text {
+      padding: 0 8px;
+      .card__title{
+        font-size: 15px;
+      }
+    }
+  }
+  .button-card {
+    margin: 0;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    padding: 5px 10px;
+  }
+
+}
+
+
